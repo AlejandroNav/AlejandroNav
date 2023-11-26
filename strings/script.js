@@ -1,4 +1,4 @@
-console.log("Holas");
+
 //Exercise 1: Find the Longest Word in a String
 function longestWord(str) {
     let maxLenght = 0;
@@ -90,7 +90,7 @@ class LinkedList {
         }
     }
 }
-const ll = new LinkedList();
+/* const ll = new LinkedList();
 ll.add(1);
 ll.add(2);
 ll.add(3);
@@ -98,17 +98,12 @@ console.log('Displaying all nodes:');
 ll.display();
 console.log("size of the list is " + ll.size());
 ll.remove(2);
-console.log('Displaying all nodes after removing 2:');
-ll.display();
-console.log("size of the list is " + ll.size());
-console.log('Displaying all nodes after adding 8:');
 ll.add(8);
-ll.display();
 console.log("size of the list is " + ll.size());
 ll.prepend(5)
 ll.display();
-console.log("size of the list is " + ll.size());
-console.log(splitArray([3, 3, 6, 7, 26, 1, 3, 5, 12, 43, 1, 6], 11));
+console.log("size of the list is " + ll.size()); */
+//console.log(splitArray([3, 3, 6, 7, 26, 1, 3, 5, 12, 43, 1, 6], 11));
 
 
 //fizzbuzz
@@ -130,4 +125,16 @@ function fizzBuzz(limit) {
     }
 }
 
-console.log(fizzBuzz(100));
+//console.log(fizzBuzz(100));
+
+//Objective: Create a function that checks if a string is a palindrome (a string that reads the same forward and backward).
+function isPalindrome(str) {
+    let cleanInput = str.toUpperCase().split(' ').join('');
+    let reversed = cleanInput.split('').reverse().join('')
+    if (reversed==cleanInput) {
+        return true
+    }
+    return false
+}
+
+console.log(isPalindrome("never odd or even"));
