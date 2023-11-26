@@ -2,7 +2,7 @@ console.log("Holas");
 //Exercise 1: Find the Longest Word in a String
 function longestWord(str) {
     let maxLenght = 0;
-    let longestWord =  ""
+    let longestWord = ""
     let words = str.split(' ')
     for (let i = 0; i < words.length; i++) {
         console.log(words[i].length);
@@ -21,10 +21,10 @@ function reverseString(str) {
     return rejoinedString;
 }
 //EXcercise 3: Objective: Splits an array (first arg) into groups the length of size (second argument) and returns them as a two-dimensional array.
-function splitArray(arr,size){
+function splitArray(arr, size) {
     let resultArrays = [];
-    for( let i=0 ; i < arr.length; i+=size){
-        let piece = arr.slice(i,i+size)
+    for (let i = 0; i < arr.length; i += size) {
+        let piece = arr.slice(i, i + size)
         resultArrays.push(piece)
     }
     return resultArrays
@@ -44,10 +44,10 @@ class LinkedList {
         const newNode = new LinkedListNode(data);
         if (!this.head) {// If the list is empty, make the new node the head of the list
             this.head = newNode;
-            return;            
+            return;
         }
         let current = this.head  // If the list is not empty, traverse to the end of the list
-        while(current.next){
+        while (current.next) {
             current = current.next // Move to the next node
         }
         current.next = newNode; // Add the new node at the end of the list
@@ -74,14 +74,14 @@ class LinkedList {
         }
     }
     size() {
-    let count = 0;
-    let current = this.head;
-    while (current) {
-        count++;
-        current = current.next;
+        let count = 0;
+        let current = this.head;
+        while (current) {
+            count++;
+            current = current.next;
+        }
+        return count;
     }
-    return count;
-}
     display() {
         let current = this.head;
         while (current) {
@@ -108,4 +108,26 @@ console.log("size of the list is " + ll.size());
 ll.prepend(5)
 ll.display();
 console.log("size of the list is " + ll.size());
-console.log(splitArray([3,3,6,7,26,1,3,5,12,43,1,6],11));
+console.log(splitArray([3, 3, 6, 7, 26, 1, 3, 5, 12, 43, 1, 6], 11));
+
+
+//fizzbuzz
+
+function fizzBuzz(limit) {
+    for (let i = 1; i < limit + 1; i++) {
+        if (i % 15 == 0) {
+            console.log(i + ' fizz-buzzz');
+        }
+        else if (i % 3 == 0) {
+            console.log(i + ' fizz');
+        }
+        else if (i % 5 == 0) {
+            console.log(i + ' buzz');
+        }
+        else {
+            console.log(i);
+        }
+    }
+}
+
+console.log(fizzBuzz(100));
