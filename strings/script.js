@@ -166,6 +166,130 @@ function fibonacci(n) {
     return second
 }
 console.log(fibonacci(9));
+//clases
+
+class Character {
+    constructor(name, strength, defenseSkill, endurance) {
+        this.name = name;
+        this.strength = strength;
+        this.defenseSkill = defenseSkill;
+        this.endurance = endurance;
+        this.health = 50 + (5 * endurance);
+    }
+
+    attack(opponent) {
+        let attackValue = Math.floor(this.strength*1.2 )+ Math.floor(Math.random() * 11);
+        console.log(`${this.name} attacks with ${attackValue} damage`);
+        return opponent.takeDamage(attackValue);
+    }
+
+    takeDamage(attackValue) {
+        let initialDamage = attackValue;
+        let reducedDamage = attackValue - this.defenseSkill;
+    
+        // Log the impact of defense skill
+        if (reducedDamage < initialDamage) {
+            console.log(`${this.name}'s defense skill reduced the damage from ${initialDamage} to ${reducedDamage}`);
+        }
+    
+        // Ensure at least 30% damage
+        reducedDamage = Math.max(reducedDamage, attackValue * 0.3);
+        if (reducedDamage > attackValue * 0.3) {
+            console.log(`Damage taken by ${this.name} is ${reducedDamage} after applying defense`);
+        } else {
+            console.log(`${this.name} took a minimum of 30% damage (${reducedDamage})`);
+        }
+    
+        this.health -= reducedDamage;
+        this.health = Math.round(this.health);
+    
+        console.log(`${this.name} took ${reducedDamage} damage. Health is now ${this.health}`);
+        if (this.health <= 0) {
+            this.health = 0;
+            console.log(`${this.name} has been defeated!`);
+            return reducedDamage;
+        }
+        return reducedDamage;
+    }
+}
+class Animal extends Character {
+    constructor(name, strength, defenseSkill, endurance) {
+        super(name, strength, defenseSkill, endurance);
+        this.mainSkill = "Bite";
+    }
+}
+class Orc extends Character {
+    constructor(name, defenseSkill, endurance) {
+        super(name, 12, defenseSkill, endurance); // Orcs have extra strength
+    }
+}
+class Elf extends Character {
+    constructor(name, strength, defenseSkill, endurance) {
+        super(name, strength * 0.8, defenseSkill, endurance + 5); // Elves have extra endurance and lower strength scaling
+    }
+}
+class Human extends Character {
+    constructor(name, strength, defenseSkill, endurance) {
+        super(name, strength, defenseSkill, endurance);
+        this.mainSkill = "Sword";
+    }
+
+    attack(opponent) {
+        let attackValue = this.strength + Math.floor(Math.random() * 11);
+        if (this.mainSkill === "Sword") {
+            attackValue *= 1.2; // Sword skill increases damage
+        }
+        console.log(`${this.name} attacks with ${attackValue} damage`);
+        let damageDealt = opponent.takeDamage(attackValue);
+        return damageDealt;
+    }
+}
+
+
+function combat(character1, character2) {
+    let rounds = 0;
+    let totalDamageByCharacter1 = 0;
+    let totalDamageByCharacter2 = 0;
+
+    while (character1.health > 0 && character2.health > 0) {
+        rounds++;
+
+        let damageByCharacter1 = character1.attack(character2);
+        totalDamageByCharacter1 += damageByCharacter1;
+
+        if (character2.health > 0) {
+            let damageByCharacter2 = character2.attack(character1);
+            totalDamageByCharacter2 += damageByCharacter2;
+        }
+    }
+
+    // Displaying the combat statistics
+    console.log(`Combat ended in ${rounds} rounds.`);
+    console.log(`${character1.name} dealt a total of ${totalDamageByCharacter1} damage.`);
+    console.log(`${character2.name} dealt a total of ${totalDamageByCharacter2} damage.`);
+
+    let winner, loser;
+    if (character1.health <= 0 && character2.health <= 0) {
+        console.log("Both characters have been defeated. It's a draw!");
+    } else if (character1.health <= 0) {
+        winner = character2;
+        loser = character1;
+    } else {
+        winner = character1;
+        loser = character2;
+    }
+
+    if (winner) {
+        let maxHealthWinner = 50 + (5 * winner.endurance);
+        console.log(`${winner.name} wins with ${winner.health}/${maxHealthWinner} health remaining!`);
+    }
+}
+
+let orc = new Orc('Grom', 20, 12);
+let elf = new Elf('Legolas', 10, 12, 10);
+
+console.log("Combat starts between Grom and Legolas");
+combat(orc, elf);
 
 // reduce helps accept the arrow function accum item and after 
 //the function coma the number where it starts
