@@ -131,10 +131,47 @@ function fizzBuzz(limit) {
 function isPalindrome(str) {
     let cleanInput = str.toUpperCase().split(' ').join('');
     let reversed = cleanInput.split('').reverse().join('')
-    if (reversed==cleanInput) {
+    if (reversed == cleanInput) {
         return true
     }
     return false
 }
 
 console.log(isPalindrome("never odd or even"));
+
+//Objective: factorial of a number is the product of all positive integers less than or equal to the number
+function factorial(n) {
+    let total = 1
+    for (let i = 1; i < n + 1; i++) {
+        total = total * i;
+        console.log(i + ' total ' + total);
+    }
+    return total
+}
+console.log(factorial(5));
+
+// Objective: Fibonacci sequence, each number is the sum of the two preceding ones, starting from 0 and 1.
+function fibonacci(n) {
+    let first = 0
+    let second = 1
+    for (let i = 1; i < n + 1; i++) {
+        console.log(i + ' ' + first);
+        let temporalTwo = second
+        second = second + first
+        first = temporalTwo
+
+
+
+    }
+    return second
+}
+console.log(fibonacci(9));
+
+// reduce helps accept the arrow function accum item and after 
+//the function coma the number where it starts
+let nums = [4, 5, 6, 7, 89, 21, 3]
+let sum = nums.reduce((acc,i) => acc+i,2000)
+console.log(sum);
+//Leon MAP gives us a new array
+
+//reverse array without using array
