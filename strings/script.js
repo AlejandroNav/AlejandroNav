@@ -29,6 +29,8 @@ function splitArray(arr, size) {
     }
     return resultArrays
 }
+
+
 class LinkedListNode {
     constructor(data) {
         this.data = data;// The data value for this node
@@ -289,7 +291,7 @@ let orc = new Orc('Grom', 20, 12);
 let elf = new Elf('Legolas', 10, 12, 10);
 
 console.log("Combat starts between Grom and Legolas");
-combat(orc, elf);
+//combat(orc, elf);
 
 // reduce helps accept the arrow function accum item and after 
 //the function coma the number where it starts
