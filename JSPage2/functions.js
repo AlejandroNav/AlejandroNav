@@ -8,3 +8,4 @@ export function dishes(nombrePlatillo) {
     platillos.push(nombrePlatillo);
     return platillos;
 }
+
