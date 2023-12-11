@@ -180,7 +180,7 @@ class Character {
     }
 
     attack(opponent) {
-        let attackValue = Math.floor(this.strength*1.2 )+ Math.floor(Math.random() * 11);
+        let attackValue = Math.floor(this.strength * 1.2) + Math.floor(Math.random() * 11);
         console.log(`${this.name} attacks with ${attackValue} damage`);
         return opponent.takeDamage(attackValue);
     }
@@ -188,12 +188,12 @@ class Character {
     takeDamage(attackValue) {
         let initialDamage = attackValue;
         let reducedDamage = attackValue - this.defenseSkill;
-    
+
         // Log the impact of defense skill
         if (reducedDamage < initialDamage) {
             console.log(`${this.name}'s defense skill reduced the damage from ${initialDamage} to ${reducedDamage}`);
         }
-    
+
         // Ensure at least 30% damage
         reducedDamage = Math.max(reducedDamage, attackValue * 0.3);
         if (reducedDamage > attackValue * 0.3) {
@@ -201,10 +201,10 @@ class Character {
         } else {
             console.log(`${this.name} took a minimum of 30% damage (${reducedDamage})`);
         }
-    
+
         this.health -= reducedDamage;
         this.health = Math.round(this.health);
-    
+
         console.log(`${this.name} took ${reducedDamage} damage. Health is now ${this.health}`);
         if (this.health <= 0) {
             this.health = 0;
@@ -291,13 +291,26 @@ let orc = new Orc('Grom', 20, 12);
 let elf = new Elf('Legolas', 10, 12, 10);
 
 console.log("Combat starts between Grom and Legolas");
-//combat(orc, elf);
+combat(orc, elf);
 
 // reduce helps accept the arrow function accum item and after 
 //the function coma the number where it starts
 let nums = [4, 5, 6, 7, 89, 21, 3]
-let sum = nums.reduce((acc,i) => acc+i,2000)
+let sum = nums.reduce((acc, i) => acc + i, 2000)
 console.log(sum);
 //Leon MAP gives us a new array
 
+
 //reverse array without using array
+function reverseArr(arr) {
+    let reversedArray = []
+    for (let i = 0; i < arr.length; i++) {
+        reversedArray.unshift(arr[i])
+        console.log(i);
+    }
+    return reversedArray;
+}
+
+let arr = [1, 2, 4, 7, 8, 23, 56]
+
+console.log(reverseArr(arr));
