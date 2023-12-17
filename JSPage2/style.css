@@ -1,0 +1,13 @@
+input{
+    margin: .4em;
+    width: 20em;
+    height: 2em;
+    border: salmon solid 4px;
+    border-radius: 5px;
+    font-size: 1.3em;
+}
+b,span{
+    padding: 1em;
+    margin: 1em;
+    font-size: 1.3em;
+}
