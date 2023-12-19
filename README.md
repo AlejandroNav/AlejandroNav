@@ -1,13 +1,13 @@
 <h1 align="center">Hi, I'm Alex</h1>
 <h3 align="center">A passionate frontend developer from Mexico</h3>
 
-- 🔭 I’m currently working on 100 Devs **CRUD**
+- 🔭 I’m currently working on my Web Agency Site and **CRUD**
 
-- 🌱 I’m currently learning **React**
+- 🌱 I’m currently learning **Vue and Typescript**
 
 - 👯 I’m looking to collaborate on **Open Source Projects**
 
-- 🤝 I’m looking for help with **improvimg my skills**
+- 🤝 I’m looking for help with **Learning more about advanced NodeJS and SQL**
 
 - 📫 How to reach me **alejugger@gmail.com**
 
