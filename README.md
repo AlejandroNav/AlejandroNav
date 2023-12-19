@@ -1,5 +1,5 @@
 <h1 align="center">Hi, I'm Alex</h1>
-<h3 align="center">A passionate frontend developer from Mexico</h3>
+<h3 align="center">I am a Mexican software engineer and accessibility specialist, I love to mix the art of design with the technicality of computer science to create captivating and open user experiences for all people regardless of their capabilities.</h3>
 
 - 🔭 I’m currently working on my Web Agency Site and **CRUD**
 
