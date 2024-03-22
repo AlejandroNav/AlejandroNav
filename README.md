@@ -1,7 +1,7 @@
 <h1 align="center">Hi, I'm Alex</h1>
 <h3 align="center">I am a Mexican software engineer and accessibility specialist, I love to mix the art of design with the technicality of computer science to create captivating and open user experiences for all people regardless of their capabilities.</h3>
 
-- 🔭 I’m currently working on my Agency libelulas.dev and **Map API developement**
+- 🔭 I’m currently working on my Agency libelulas.dev and starting **Google Maps API support** at HCLTech
 
 - 🌱 I’m currently learning **Angular and Typescript**
 
